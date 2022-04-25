@@ -1,0 +1,203 @@
+@import "./variables.scss";
+//
+//
+// GENERAL
+body {
+  margin: 0;
+  font-family: $roboto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.hero {
+  transition: 0.5s ease all;
+  background-image: url(../assets/floqast-bg-img.png);
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  @media (min-width: $lgScreen) {
+    padding-bottom: 0;
+  }
+}
+//
+//
+// TITLE.JSX
+.title-container {
+  margin-top: $spacingMd;
+  margin-bottom: 20vh;
+  @media (min-width: $mdScreen) {
+    margin-top: $spacingLg;
+  }
+  .title {
+    width: 80%;
+    background-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0)
+    );
+
+    padding: $spacingSm 0 $spacingSm $spacingSm;
+    @media (min-width: $mdScreen) {
+      padding: $spacingSm 0 $spacingSm 10%;
+      width: 50%;
+    }
+    @media (min-width: $lgScreen) {
+      padding: $spacingSm 0 $spacingSm 15%;
+      margin-bottom: $spacingLg;
+    }
+
+    .header-txt {
+      color: $green;
+      @include font($title, $medium, $italic);
+      @media (min-width: $mdScreen) {
+        font-size: $header;
+      }
+    }
+
+    .sub-header-txt {
+      color: $darkGray;
+      @include font($paragraph, $regular, $italic);
+      @media (min-width: $mdScreen) {
+        font-size: $subHeader;
+      }
+    }
+  }
+}
+//
+//
+// FORM.JSX
+.form-container {
+  background-color: $white;
+  margin: $spacingSm;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  @media (min-width: $mdScreen) {
+    margin: 0 10%;
+  }
+  @media (min-width: $lgScreen) {
+    display: grid;
+    grid-template-columns: 4fr 8fr;
+    margin: 0 15%;
+  }
+
+  .form-details {
+    display: flex;
+    border-radius: 4px 4px 0 0;
+    background-color: $green;
+    color: $white;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: $spacingXs;
+    @media (min-width: $lgScreen) {
+      clip-path: polygon(
+        0% 0%,
+        calc(100% - 1.5em) 0%,
+        100% 50%,
+        calc(100% - 1.5em) 100%,
+        0% 100%
+      );
+      border-radius: 4px 0 0 4px;
+    }
+
+    div {
+      h3 {
+        @include font($paragraph, $bold, $normal);
+        @media (min-width: $lgScreen) {
+          font-size: $title;
+        }
+      }
+
+      p {
+        @include font($button, $regular, $normal);
+      }
+    }
+  }
+
+  .arrow-border {
+    width: 10px;
+    height: 0;
+    border-top: 48px solid transparent;
+    border-bottom: 48px solid transparent;
+    border-left: 20px solid $green;
+  }
+
+  .demo-form {
+    padding: $spacingXs $spacingSm $spacingSm $spacingSm;
+    @media (min-width: $lgScreen) {
+      padding: $spacingSm;
+    }
+
+    p {
+      @include font($paragraph, $bold, $normal);
+    }
+
+    p:nth-child(1) {
+      color: $gray;
+    }
+
+    p:nth-child(2) {
+      color: $green;
+    }
+
+    .form-text {
+      text-align: center;
+      justify-content: center;
+      margin-bottom: $spacingXs;
+      @media (min-width: $lgScreen) {
+        display: flex;
+      }
+    }
+
+    .field-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: $spacingXs;
+      @media (min-width: $lgScreen) {
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      input {
+        border: 1px solid $lightGray;
+        border-radius: 4px;
+        padding: 11px;
+        @include font($textField, $regular, $normal);
+      }
+
+      button {
+        font-family: Roboto;
+        border: 1px solid $darkGreen;
+        border-radius: 4px;
+        padding: 8px $spacingSm;
+        background-color: $green;
+        color: $white;
+        @include font($button, $medium, $normal);
+        box-shadow: 0 0 2px $darkGreen;
+        transition: 0.5s ease all;
+
+        &:hover {
+          cursor: pointer;
+          background-color: $white;
+          color: $green;
+        }
+      }
+    }
+  }
+}

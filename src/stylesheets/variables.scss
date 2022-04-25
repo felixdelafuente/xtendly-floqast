@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap');
+
+// COLORS
+$darkGreen: #6F973B;
+$green: #90C33B;
+$darkGray: #3F3F3F;
+$gray: #6D6D70;
+$lightGray: #DCDCDC;
+$white: #FFFFFF;
+
+// TYPEFACE
+$roboto: "Roboto", sans-serif;
+
+// FONT SIZES
+$header: 48px;
+$subHeader: 32px;
+$title: 28px;
+$paragraph: 22px;
+$button: 18px;
+$textField: 14px;
+
+// FONT STYLES
+$bold: 700;
+$medium: 500;
+$regular: 400;
+$italic: italic;
+$normal: normal;
+
+@mixin font($size, $weight, $style) {
+  font-size: $size;
+  font-weight: $weight;
+  font-style: $style;
+}
+
+// SPACING
+$spacingXl: 14em; // 224px
+$spacingLg: 9em; // 128px
+$spacingMd: 6em; // 96px
+$spacingSm: 2em; // 32px
+$spacingXs: 1em; // 16px
+
+// BREAKPOINTS
+$lgScreen: 1025px;
+$mdScreen: 768px;
